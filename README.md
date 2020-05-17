@@ -25,9 +25,9 @@ vuepress build .
 ## 项目启动：
 
 ```js
-git@github.com:Nonentityboy/KnowledgeInterview.git
+git clone git@github.com:Nonentityboy/KnowledgeInterview.git
 
-# 项目启动
+# 项目本地启动
 
 npm run dev
 
