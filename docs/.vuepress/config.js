@@ -9,7 +9,8 @@ module.exports = {
             {
                 text: '知识图谱',
                 items: [
-                    { text: '前端基础进阶', link: '/feInterview/', },
+                    { text: '前端基础进阶', link: '/feInterview/' },
+                    { text: '前端框架进阶', link: '/feFramework/' },
                     { text: '计算机基础进阶', link: '/csInterview/' },
                     { text: '算法与数据结构', link: '/JSalgorithm/' },
                 ]
@@ -30,9 +31,17 @@ module.exports = {
                 ['前端工程化', '前端工程化'],
                 ['跨端开发', '跨端开发实践']
             ],
+            '/feFramework/': [
+                ['Vue','Vue框架'],
+                ['React','React框架'],
+                ['Angular','Angular框架']
+            ],
             '/csInterview/': [
                 ['HTTP', 'HTTP协议'],
                 ['TCP-UDP', 'TCP、UDP协议'],
+            ],
+            '/JSalgorithm/': [
+
             ]
         },
         sidebarDepth: 2,
