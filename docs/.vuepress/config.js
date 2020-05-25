@@ -20,7 +20,8 @@ module.exports = {
         ],
         sidebar: {
             '/feInterview/': [
-                ['CSS', 'CSS常见布局'],
+                ['HTML', 'HTML相关'],
+                ['CSS', 'CSS'],
                 ['JS_base', 'JS基础'],
                 ['JS_array', 'JS深入数组'],
                 ['JS_V8', 'JS深入V8引擎'],
@@ -40,9 +41,11 @@ module.exports = {
                 ['HTTP', 'HTTP协议'],
                 ['TCP-UDP', 'TCP、UDP协议'],
             ],
-            '/JSalgorithm/': [
-
-            ]
+            // '/JSalgorithm/': [
+            //     ['queue&stack','队列&栈'],
+            //     ['array&string','数组&字符串'],
+            //     ['linkedlist','链表'],
+            // ]
         },
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
