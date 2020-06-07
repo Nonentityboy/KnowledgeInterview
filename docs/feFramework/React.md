@@ -203,10 +203,94 @@ this.setState((state, props) => {
 
 Redux 是react的一个状态管理库，它基于flux。redux简化了React中的单向数据流。 Redux 将状态管理从React中抽象出来。
 
-### redux如何工作
+### Redux简介，一看就懂
+* redux是react全家桶一员，为React提供`可预测化的状态管理`机制
+* Redux将整个应用状态存储到一个地方，称为store
+* 里面保存一个状态数（state tree）
+* 组件可以派发dispatch行为action给store，而不是直接通知其它组件
+* 其它组件可通过订阅store中的状态（state）来刷新自己的视图
+
+### Redux是如何工作的
 
 * React中，组件连接到redux，如果要访问redux，需要排除一个包含 `id` 和负载（payload）的 `action`。action 中的 `payload`是可选的，action 将其转发给 Reducer
 * `reducer`收到`action`时，通过`switch case`语法比较 `action`中的 `type`。 匹配时，更新内容返回新的 `state`
 * `redux`状态更改时，连接`redux`的组件将接受新的状态作为`props`。当组件接收到这些`props`时，它将进入更新阶段并重新渲染UI
 
+### redux核心
 
+1. State
+state是数据集合，`可以理解为工厂加工商品所需的原材料`。
+
+2. action
+State的变化，会导致View的变化。但是，用户接触不到 State，只能接触到View 所以，State的变化必须是 View导致的。
+action就是改变state的指令，有多少操作state的动作就会有多少action。
+`可以将action理解为描述发生了什么的指示器`
+
+3. reducer 加工函数
+action发出命令后将state放入reducer加工函数中，返回新的state。
+`可以理解为加工的机器`
+
+4. store
+store `可以理解为有多个加工机器的总工厂`
+let store = createStore(reducers);
+
+复制代码Store 就是把它们联系到一起的对象。Store 有以下职责：
+维持应用的 state；
+
+* 提供 getState() 方法获取 state；
+* 提供 dispatch(action) 方法更新 state；
+* 通过 subscribe(listener) 注册监听器;
+* 通过 subscribe(listener) 返回的函数注销监听器。
+* 通过store.getState()来了解工厂中商品的状态，
+* 用store.dispatch发送action指令。
+
+react-redux一点就透
+
+
+
+```js
+
+1. 创建store,使用createStore包裹reducer.
+2. store 订阅 subscribe()  状态
+3. store dispatch 派发更新 action
+4. reducer 作为加工函数，看action的类型，进行加工
+5. 加工完成后，返回新的state
+
+import { createStore } from 'redux'
+
+const reducer = (state = {count: 0}, action) => {
+  switch (action.type){
+    case 'INCREASE': return {count: state.count + 1};
+    case 'DECREASE': return {count: state.count - 1};
+    default: return state;
+  }
+}
+
+const actions = {
+  increase: () => ({type: 'INCREASE'}),
+  decrease: () => ({type: 'DECREASE'})
+}
+
+const store = createStore(reducer);
+
+store.subscribe(() =>
+  console.log(store.getState())
+);
+
+store.dispatch(actions.increase()) // {count: 1}
+store.dispatch(actions.increase()) // {count: 2}
+store.dispatch(actions.increase()) // {count: 3}
+
+
+```
+
+
+react-redux 官方提供 
+
+* connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
+
+
+* react-redux中的connect方法将store上的getState 和 dispatch 包装成组件的props。
+
+* mapStateToProps这个函数允许我们将 store 中的数据作为 props 绑定到组件上。
+* mapDispatchToProps(dispatch, ownProps): dispatchProps connect 的第二个参数是 mapDispatchToProps，它的功能是，将 action 作为 props 绑定到 MyComp 上。
