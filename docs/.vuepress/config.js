@@ -15,7 +15,7 @@ module.exports = {
                     { text: '算法与数据结构', link: '/JSalgorithm/' },
                 ]
             },
-            { text: '关于', link: '/about/' },
+            { text: '参考', link: '/about/' },
             { text: 'Github', link: 'https://www.github.com/nonentityboy' },
         ],
         sidebar: {
