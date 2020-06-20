@@ -190,34 +190,3 @@ while (ary.some(Array.isArray())) {
   ary = [].concat(...ary);
 }
 ```
-### 7: 利用Set 数据结构
-
-扩展运算符(...)内部使用for...of循环
-```js
-let arr = [3,5,2,2,5,5];
-let unique = [...new Set(arr)]; // [3,5,2]
-```
-利用Array.from将Set结构转为数组
-```js
-function dedupe(array){
-  return Array.from(new Set(arr));
-}
-dedupe([1,1,2,3])// [1,2,3]
-```
-
-### 8：利用indexOf()与for循环
-
-```js
-let arr = ['abc', 'abc','ss','a','d',1,4,1]
-function distinct(arr){
-  let newArr = [];
-  let arrLength = arr.length;
-  for(let i = 0; i < arrLength; i++){
-    if(newArr.indexOf(arr[i]) === -1){
-      newArr.push(arr[i]);
-    }
-  }
-  return newArr;
-}
-console.log(distinct(arr));
-```
