@@ -2,6 +2,9 @@
 module.exports = {
     title: '前端知识总结',
     description: 'Curtin的前端笔记',
+    head: [
+        ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `https://s1.ax1x.com/2020/06/21/N11p8I.th.jpg` }]
+    ],
     themeConfig: {
         sidebar: 'auto',
         nav: [
@@ -50,6 +53,7 @@ module.exports = {
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
         themeConfig: {
+            logo: 'https://s1.ax1x.com/2020/06/21/N11p8I.th.jpg',
             sidebar: 'auto'
         }
 

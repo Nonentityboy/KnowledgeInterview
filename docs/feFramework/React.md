@@ -289,8 +289,8 @@ react-redux 官方提供
 
 * connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 
-
 * react-redux中的connect方法将store上的getState 和 dispatch 包装成组件的props。
 
 * mapStateToProps这个函数允许我们将 store 中的数据作为 props 绑定到组件上。
+  
 * mapDispatchToProps(dispatch, ownProps): dispatchProps connect 的第二个参数是 mapDispatchToProps，它的功能是，将 action 作为 props 绑定到 MyComp 上。

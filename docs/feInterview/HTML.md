@@ -1,11 +1,14 @@
 ## 01: HTML5和HTML4的不同?
+
 ### 声明方面
 HTML5 文件类型声明（<!DOCTYPE>）变成下面的形式：
 ```html
 <!DOCTYPE html>
 ```
+
 ### 标准方面
 HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准，而是形成了自己的一套标准。
+
 ### 标签方面
 新增语义标签，其中包括
 ```html
@@ -16,6 +19,7 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
 <big>、<u>、<font>、<basefont>、<center>、<s>、<tt>
 ```
 通过增加了<audio>、<video>两个标签来实现对多媒体中的音频、视频使用的支持。
+
 ### 属性方面
 
 ```html
@@ -48,12 +52,15 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
 <!-- 属性名="属性名"也为true -->
 <input type="checkbox"  checked="checked"/>
 ```
+
 ### 存储方面
 * 新增WebStorage, 包括localStorage和sessionStorage
 
 * 引入了IndexedDB和Web SQL，允许在浏览器端创建数据库表并存储数据, 两者的区别在于IndexedDB更像是一个NoSQL数据库，而WebSQL更像是关系型数据库。W3C已经不再支持WebSQL。
 
 * 引入了应用程序缓存器(application cache)，可对web进行缓存，在没有网络的情况下使用，通过创建cache manifest文件,创建应用缓存，为PWA(Progressive Web App)提供了底层的技术支持。
+
+
 ## 02: meta标签属性有哪些?
 
 ### charset属性
@@ -88,6 +95,7 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
   user-scalable：用户是否可以手动缩 (no,yes)
  -->
 ```
+
 ### http-equiv属性
 ```html
 <!-- expires指定网页的过期时间。一旦网页过期，必须从服务器上下载。 -->
@@ -103,6 +111,8 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
 <!-- 针对WebApp全屏模式，隐藏状态栏/设置状态栏颜色，content的值为default | black | black-translucent -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 ```
+
+
 ## 03: src与href区别?
 
 ### 定义
@@ -121,14 +131,17 @@ src是source的简写，目的是要把文件下载到html页面中去。
 <iframe src="top.html"> 
 <script src="show.js"> 
 ```
+
 ### 作用结果
 href 用于在当前文档和引用资源之间确立联系
 src 用于替换当前内容
+
 ### 浏览器解析方式
 * 当浏览器遇到href会并行下载资源并且不会停止对当前文档的处理。(同时也是为什么建议使用 link 方式加载 CSS，而不是使用 @import 方式)
 * 当浏览器解析到src ，会暂停其他资源的下载和处理，直到将该资源加载或执行完毕。(这也是script标签为什么放在底部而不是头部的原因)
-## 04: Web语义化?
 
+
+## 04: Web语义化?
 
 ### 什么是SEO？
 SEO（Search Engine Optimization，搜索引擎优化 ），是一种利用搜索引擎的搜索规则来提高目的网站在有关搜索引擎内的排名的方式。通俗来讲就是根据搜素引擎的规则来优化你的网站，让你的网站能够在用户的搜索结果中排在前面，提高网站的访问量。
@@ -142,7 +155,7 @@ SEO（Search Engine Optimization，搜索引擎优化 ），是一种利用搜�
 TDK优化
 TDK，即 title, description, keywords。
 
-### 一、title
+### title
 
 在SEO中，标题的优化占着举足轻重的地位，无论是从用户体验的角度出发，还是从搜索引擎的排名效果出发，title都是页面优化最最重要的因素。
 title的分隔符一般有,，_，-和空格。其中_对百度比较友好，而-对谷歌比较友好，空格在英文站点可以使用但中文少用。
@@ -163,7 +176,7 @@ title的分隔符一般有,，_，-和空格。其中_对百度比较友好，�
 <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
 ```
 
-### 二、description
+### description
 
 description不是权值计算的参考因素，这个标签存在与否不影响网页权值，只会用做搜索结果摘要的一个选择目标。用户极有可能通过网站的摘要来决定是否浏览该网站。
 
@@ -182,7 +195,7 @@ description不是权值计算的参考因素，这个标签存在与否不影响
 <meta name="description" content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
 ```
 
-### 三、keywords
+### keywords
 
 keywords在搜索排名的权重不高，但是合理的设置，可以提高关键字的密度及优化搜索结果页的体验。通过加大关键词的密度，从而提高关键词在搜索引擎的排名，是SEO优化的一个常用手段。
 
@@ -197,6 +210,7 @@ SEO的核心思想是每个页面抓住几个关键字（一般不超过5个）�
 
 
 ## 05: script标签中defer和async的区别?
+
 默认情况下，脚本的下载和执行将会按照文档的先后顺序同步进行。当脚本下载和执行的时候，文档解析就会被阻塞，在脚本下载和执行完成之后文档才能往下继续进行解析。
 
 下面是async和defer两者区别：
