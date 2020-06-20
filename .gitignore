@@ -1,1 +1,3 @@
 /docs/offerPlan/*
+/docs/.vuepress/
+/node_modules
