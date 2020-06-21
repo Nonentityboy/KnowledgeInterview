@@ -53,11 +53,11 @@ npm run build
 
 [前端精度周刊公众号](https://github.com/dt-fe/weekly)
 
-[azl大佬，leetcode+前端知识图谱]https://github.com/azl397985856
+[azl大佬，leetcode+前端知识图谱](https://github.com/azl397985856)
 
-[木易杨前端进阶]https://muyiy.cn
+[木易杨前端进阶](https://muyiy.cn)
 
-[conardli博客]http://www.conardli.top/blog
+[conardli博客](http://www.conardli.top/blog)
 
 [前端面试与进阶指南(配合职业规划，面试指导)](https://www.cxymsg.com)
 
@@ -71,4 +71,4 @@ npm run build
 
 [Nodejs技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
 
-[30-seconds-of-code]https://github.com/30-seconds/30-seconds-of-code
+[30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code)
