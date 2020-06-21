@@ -1,5 +1,7 @@
 ## 参考
 
+[支付宝前端九部（强推!）](https://www.yuque.com/fe9/basic)
+
 [神三元博客](http://47.98.159.95/my_blog/nav/)
 
 [神三元算法](http://47.98.159.95/leetcode-js/)  
@@ -8,29 +10,27 @@
 
 [yck前端面试之道](https://yuchengkai.cn)
 
-https://github.com/alienzhou
+[前端技术清单](https://www.alienzhou.com/projects/frontend-tech-list/)
 
-https://github.com/dt-fe/weekly
+[前端精度周刊公众号](https://github.com/dt-fe/weekly)
 
-https://github.com/azl397985856
+[azl大佬，leetcode+前端知识图谱]https://github.com/azl397985856
 
-https://muyiy.cn
+[木易杨前端进阶]https://muyiy.cn
 
-http://www.conardli.top/blog
+[conardli博客]http://www.conardli.top/blog
 
-https://www.cxymsg.com
+[前端面试与进阶指南(配合职业规划，面试指导)](https://www.cxymsg.com)
 
-https://www.yuque.com/fe9/basic
+[JavaScript开发者应懂的33个概念](https://github.com/stephentian/33-js-concepts)
 
-https://github.com/stephentian/33-js-concepts
+[冴羽的博客](https://github.com/mqyqingfeng/Blog)
 
-https://github.com/mqyqingfeng/Blog
+[掘金小册](https://juejin.im/books)
 
-https://juejin.im/books
+[how-javascript-works](https://github.com/Troland/how-javascript-works)
 
-https://github.com/Troland/how-javascript-works
+[Nodejs技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
 
-https://github.com/Q-Angelo/Nodejs-Roadmap
-
-https://github.com/30-seconds/30-seconds-of-code
+[30-seconds-of-code]https://github.com/30-seconds/30-seconds-of-code
 
