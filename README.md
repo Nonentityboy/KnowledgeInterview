@@ -2,6 +2,8 @@
 
 链接：http://148.70.47.125:9003/
 
+@author: lkt,lxh
+
 ## vuepress全局安装
 如果你只是想尝试一下 VuePress，你可以全局安装它：
 
