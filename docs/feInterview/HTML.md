@@ -74,7 +74,7 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
 <!-- 网页作者 -->
 <meta name="author" content="开源技术团队"/>
 <!-- 网页地址 -->
-<meta name="website" content="https://sanyuan0704.github.io/frontend_daily_question/"/>
+<meta name="website" content="https://baidu.com"/>
 <!-- 网页版权信息 -->
  <meta name="copyright" content="2018-2019 demo.com"/>
 <!-- 网页关键字, 用于SEO -->

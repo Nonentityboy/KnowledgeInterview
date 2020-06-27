@@ -322,7 +322,7 @@ set-Cookie: b=xxx
 
 SameSite可以设置为三个值，Strict、Lax和None。
 
-* a. 在Strict模式下，浏览器完全禁止第三方请求携带Cookie。比如请求sanyuan.com网站只能在sanyuan.com域名当中请求才能携带 Cookie，在其他网站请求都不能。
+* a. 在Strict模式下，浏览器完全禁止第三方请求携带Cookie。比如请求xylkt.cn网站只能在xylkt.cn域名当中请求才能携带 Cookie，在其他网站请求都不能。
 
 * b. 在Lax模式，就宽松一点了，但是只能在 get 方法提交表单况或者a 标签发送 get 请求的情况下可以携带 Cookie，其他情况均不能。
 
