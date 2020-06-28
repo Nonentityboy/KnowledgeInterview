@@ -23,7 +23,7 @@ module.exports = {
         ],
         sidebar: {
             '/feInterview/': [
-                ['HTML', 'HTML'],
+                ['HTML', 'HTML相关'],
                 ['CSS', 'CSS'],
                 ['JS_base', 'JS基础'],
                 ['JS_array', 'JS深入数组'],

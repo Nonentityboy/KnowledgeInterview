@@ -356,6 +356,13 @@ SameSite可以设置为三个值，Strict、Lax和None。
 
 > 跨域请求的响应一般会被浏览器所拦截，注意，是被浏览器拦截，响应其实是成功到达客户端了。
 
+### 跨域解决方式有哪些？
+
+* JSONP
+* CORS
+* document.domain
+* postMessage
+
 ### CORS
 
 CORS 其实是 W3C 的一个标准，全称是`跨域资源共享`。它需要浏览器和服务器的共同支持，具体来说，非 IE 和 IE10 以上支持CORS，服务器需要附加特定的响应头，后面具体拆解。不过在弄清楚 CORS 的原理之前，我们需要清楚两个概念: `简单请求`和`非简单请求`。
@@ -506,7 +513,27 @@ jsonp({
 
 > 和CORS相比，JSONP 最大的优势在于兼容性好，IE 低版本不能使用 CORS 但可以使用 JSONP，缺点也很明显，请求方法单一，只支持 GET 请求。
 
+### document.domain
 
+该方式只能用于二级域名相同的情况下，比如 `a.test.com` 和 `b.test.com` 适用于该方式。
+
+只需要给页面添加 `document.domain = 'test.com'` 表示二级域名都相同就可以实现跨域
+
+### postMessage
+这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息
+
+```js
+// 发送消息端
+window.parent.postMessage('message', 'http://test.com')
+// 接收消息端
+var mc = new MessageChannel()
+mc.addEventListener('message', event => {
+  var origin = event.origin || event.originalEvent.origin
+  if (origin === 'http://test.com') {
+    console.log('验证通过')
+  }
+})
+```
 
 ## 10：HTTP/2 有哪些改进？
 
