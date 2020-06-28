@@ -45,11 +45,10 @@ module.exports = {
                 ['TCP-UDP', 'TCP、UDP协议'],
                 ['OS', '操作系统面试之道'],
             ],
-            // '/JSalgorithm/': [
-            //     ['queue&stack','队列&栈'],
-            //     ['array&string','数组&字符串'],
-            //     ['linkedlist','链表'],
-            // ]
+            '/JSalgorithm/': [
+                ['linkedlist','链表'],
+                ['binarytree','二叉树'],
+            ]
         },
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
