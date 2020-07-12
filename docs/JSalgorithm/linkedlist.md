@@ -165,3 +165,21 @@ var detectCycle = function(head) {
     return null;
 };
 ```
+
+## 相交链表
+找到两个单链表相交的起始节点
+
+![](https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png)
+
+题解：双指针法，A和B一起遍历到末节点，交换位置，从新遍历。第二遍时候，第一次相遇就是节点了。
+```js
+var getIntersectionNode = function(headA, headB) {
+    let pA = headA;
+    let pB = headB;
+    while(pA !== pB) {
+        pA = pA ? pA.next : headB;
+        pB = pB ? pB.next : headA; 
+    }
+    return pA;
+};
+```

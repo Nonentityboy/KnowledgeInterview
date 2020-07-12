@@ -18,7 +18,7 @@ GET /home HTTP/1.1
 ```
 也就是方法 + 路径 + http版本。
 
-对于响应报文来说，起始行一般张这个样:
+对于响应报文来说，起始行这个样:
 ```http
 HTTP/1.1 200 OK
 ```
@@ -50,19 +50,19 @@ HTTP/1.1 200 OK
 
 ## 02. 如何理解 HTTP 的请求方法？
 
-### 有哪些请求方法？
+### 1. HTTP有哪些请求方法？
 http/1.1规定了以下请求方法(注意，都是大写):
 
-GET: 通常用来获取资源
-HEAD: 获取资源的元信息
-POST: 提交数据，即上传数据
-PUT: 修改数据
-DELETE: 删除资源(几乎用不到)
-CONNECT: 建立连接隧道，用于代理服务器
-OPTIONS: 列出可对资源实行的请求方法，用来跨域请求
-TRACE: 追踪请求-响应的传输路径
+* GET: 通常用来获取资源
+* HEAD: 获取资源的元信息
+* POST: 提交数据，即上传数据
+* PUT: 修改数据
+* DELETE: 删除资源(几乎用不到)
+* CONNECT: 建立连接隧道，用于代理服务器
+* OPTIONS: 列出可对资源实行的请求方法，用来跨域请求
+* TRACE: 追踪请求-响应的传输路径
 
-### GET 和 POST 有什么区别？
+### 2. GET 和 POST 有什么区别？
 首先最直观的是语义上的区别。
 
 而后又有这样一些具体的差别:
@@ -365,9 +365,16 @@ SameSite可以设置为三个值，Strict、Lax和None。
 
 ### CORS
 
-CORS 其实是 W3C 的一个标准，全称是`跨域资源共享`。它需要浏览器和服务器的共同支持，具体来说，非 IE 和 IE10 以上支持CORS，服务器需要附加特定的响应头，后面具体拆解。不过在弄清楚 CORS 的原理之前，我们需要清楚两个概念: `简单请求`和`非简单请求`。
+CORS 其实是 W3C 的一个标准，全称是`跨域资源共享`。
 
-浏览器根据请求方法和请求头的特定字段，将请求做了一下分类，具体来说规则是这样，凡是满足下面条件的属于简单请求:
+需要浏览器和服务器的共同支持。
+
+* 具体来说，非 IE 和 IE10 以上支持CORS
+* 服务器需要附加特定的响应头，后面具体拆解。
+
+不过在弄清楚 CORS 的原理之前，我们需要清楚两个概念: `简单请求`和`非简单请求`。
+
+浏览器根据请求方法和请求头的特定字段，将请求做了一下分类，具体来说规则是这样，凡是满足下面条件的属于`简单请求`:
 
 * 请求方法为 GET、POST 或者 HEAD
 * 请求头的取值范围: Accept、Accept-Language、Content-Language、Content-Type(只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain)
@@ -378,7 +385,9 @@ CORS 其实是 W3C 的一个标准，全称是`跨域资源共享`。它需要�
 ### 简单请求
 请求发出去之前，浏览器做了什么？
 
-它会自动在请求头当中，添加一个Origin字段，用来说明请求来自哪个源。服务器拿到请求之后，在回应时对应地添加`Access-Control-Allow-Origin`字段，如果Origin不在这个字段的范围中，那么浏览器就会将响应拦截。
+它会自动在请求头当中，添加一个Origin字段，用来说明请求来自哪个源。
+
+服务器拿到请求之后，在回应时对应地添加`Access-Control-Allow-Origin`字段，如果Origin不在这个字段的范围中，那么浏览器就会将响应拦截。
 
 因此，`Access-Control-Allow-Origin` 字段是服务器用来决定浏览器是否拦截这个响应，这是必需的字段。与此同时，其它一些可选的功能性的字段，用来描述如果不会拦截，这些字段将会发挥各自的作用。
 
@@ -389,8 +398,9 @@ let xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 ```
 
-Access-Control-Expose-Headers。这个字段是给 XMLHttpRequest 对象赋能，让它不仅可以拿到基本的 6 个响应头字段（包括Cache-Control、Content-Language、Content-Type、Expires、Last-Modified和Pragma）, 还能拿到这个字段声明的响应头字段。比如这样设置:
-```
+`Access-Control-Expose-Headers`。这个字段是给 XMLHttpRequest 对象赋能，让它不仅可以拿到基本的 6 个响应头字段（包括Cache-Control、Content-Language、Content-Type、Expires、Last-Modified和Pragma）, 还能拿到这个字段声明的响应头字段。比如这样设置:
+
+```http
 Access-Control-Expose-Headers: aaa
 ```
 那么在前端可以通过 XMLHttpRequest.getResponseHeader('aaa') 拿到 aaa 这个字段的值。
@@ -413,7 +423,7 @@ xhr.send();
 OPTIONS / HTTP/1.1
 Origin: 当前地址
 Host: xxx.com
-Access-Control-Request-Method: PUT
+Access-Control-Request-Method: OPTIONS
 Access-Control-Request-Headers: X-Custom-Header
 ```
 
@@ -445,7 +455,7 @@ Content-Length: 0
 ```http
 Access-Control-Allow-Origin: 表示可以允许请求的源，可以填具体的源名，也可以填*表示允许任意源请求。
 Access-Control-Allow-Methods: 表示允许的请求方法列表。
-Access-Control-Allow-Credentials: 简单请求中已经介绍。
+Access-Control-Allow-Credentials: 这个字段是一个布尔值，表示是否允许发送 Cookie，对于跨域请求，浏览器对这个字段默认值设为 false，而如果需要拿到浏览器的 Cookie，需要添加这个响应头并设为true, 并且在前端也需要设置withCredentials属性为：xhr.withCredentials = true;
 Access-Control-Allow-Headers: 表示允许发送的请求头字段
 Access-Control-Max-Age: 预检请求的有效期，在此期间，不用发出另外一条预检请求。
 ```
@@ -453,6 +463,19 @@ Access-Control-Max-Age: 预检请求的有效期，在此期间，不用发出�
 在预检请求的响应返回后，如果请求不满足响应头的条件，则触发XMLHttpRequest的onerror方法，当然后面真正的CORS请求也不会发出去了。
 
 > CORS 请求的响应。绕了这么一大转，到了真正的 CORS 请求就容易多了，现在它和简单请求的情况是一样的。浏览器自动加上Origin字段，服务端响应头返回Access-Control-Allow-Origin。可以参考以上简单请求部分的内容。
+
+
+#### CORS在服务端应该怎么配置
+
+几个关键的响应头字段:
+
+```http
+Access-Control-Allow-Origin: 表示可以允许请求的源，可以填具体的源名，也可以填*表示允许任意源请求。
+Access-Control-Allow-Methods: 表示允许的请求方法列表。
+Access-Control-Allow-Credentials: 简单请求中已经介绍。
+Access-Control-Allow-Headers: 表示允许发送的请求头字段
+Access-Control-Max-Age: 预检请求的有效期，在此期间，不用发出另外一条预检请求。
+```
 
 ### JSONP
 虽然XMLHttpRequest对象遵循同源政策，但是script标签不一样，它可以通过 src 填上目标地址从而发出 GET 请求，实现跨域请求并拿到响应。这也就是 JSONP 的原理，接下来我们就来封装一个 JSONP:

@@ -16,6 +16,7 @@ module.exports = {
                     { text: '前端框架进阶', link: '/feFramework/' },
                     { text: '计算机基础进阶', link: '/csInterview/' },
                     { text: '算法与数据结构', link: '/JSalgorithm/' },
+                    { text: 'JavaScript实现', link: '/JSachieve/' },
                 ]
             },
             { text: '参考', link: '/about/' },
@@ -44,11 +45,15 @@ module.exports = {
             '/csInterview/': [
                 ['HTTP', 'HTTP协议'],
                 ['TCP-UDP', 'TCP、UDP协议'],
-                ['OS', '操作系统面试之道'],
+                ['OS', '操作系统'],
             ],
             '/JSalgorithm/': [
                 ['linkedlist','链表'],
                 ['binarytree','二叉树'],
+            ],
+            '/JSachieve/': [
+                ['数组去重、扁平、最值','数组去重'],
+                ['call&apply&bind','call、apply、bind实现']
             ]
         },
         sidebarDepth: 2,
