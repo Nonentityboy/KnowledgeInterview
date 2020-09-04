@@ -1,9 +1,8 @@
 ## 参考
 
-[支付宝前端九部（强推!）](https://www.yuque.com/fe9/basic)
+[前端九部](https://www.yuque.com/fe9/basic)
 
 [conardli算法](http://www.conardli.top/docs/)
-
 
 [神三元博客](http://47.98.159.95/my_blog/nav/)
 
