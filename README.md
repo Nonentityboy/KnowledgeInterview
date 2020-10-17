@@ -38,7 +38,7 @@ npm run build
 
 ## 参考
 
-[支付宝前端九部（强推!）](https://www.yuque.com/fe9/basic)
+[支付宝前端九部](https://www.yuque.com/fe9/basic)
 
 [conardli算法](http://www.conardli.top/docs/)
 
