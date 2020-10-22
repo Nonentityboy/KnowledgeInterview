@@ -2,6 +2,8 @@
 
 ### 声明方面
 HTML5 文件类型声明（<!DOCTYPE>）变成下面的形式：
+
+
 ```html
 <!DOCTYPE html>
 ```
@@ -14,8 +16,10 @@ HTML5的文档解析不再基于SGML(Standard Generalized Markup Language)标准
 ```html
 <header>、<footer>、<section>、<article>、<nav>、<hgroup>、<aside>、<figure>
 ```
+
 废除一些网页美化方面的标签，使样式与结构分离更加彻底, 包括
-```js
+
+```html 
 <big>、<u>、<font>、<basefont>、<center>、<s>、<tt>
 ```
 通过增加了<audio>、<video>两个标签来实现对多媒体中的音频、视频使用的支持。
@@ -225,3 +229,5 @@ SEO的核心思想是每个页面抓住几个关键字（一般不超过5个）�
 Load 事件触发代表页面中的 DOM，CSS，JS，图片已经全部加载完毕。
 
 DOMContentLoaded 事件触发代表初始的 HTML 被完全加载和解析，不需要等待 CSS，JS，图片加载。
+
+

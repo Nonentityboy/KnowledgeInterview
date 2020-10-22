@@ -24,16 +24,16 @@ module.exports = {
         ],
         sidebar: {
             '/feInterview/': [
-                ['HTML', 'HTML相关'],
+                ['HTML', 'HTML'],
                 ['CSS', 'CSS'],
                 ['JS_base', 'JS基础'],
                 ['JS_array', 'JS深入数组'],
                 ['JS_V8', 'JS深入V8引擎'],
                 ['JS_promise', 'JS-异步I/O及异步编程'],
+                ['FE_engineer', '前端工程化'],
                 ['性能', '性能相关'],
                 ['浏览器-安全', '浏览器-安全相关'],
                 ['浏览器-渲染', '浏览器-渲染相关'],
-                ['前端工程化', '前端工程化'],
                 ['跨端开发', '跨端开发实践'],
                 ['JS_achieve', '手搓实现']
             ],
